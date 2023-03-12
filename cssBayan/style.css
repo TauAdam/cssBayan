@@ -33,6 +33,11 @@ h3 {
     visibility: visible;
     transition: all 0.3s linear;
   }
+  .accordion:hover .accordion-item:has(input[type='radio']:checked) .icon {
+    visibility: visible;
+    transform: rotate(45deg);
+    transition: all 0.3s linear;
+  }
   .accordion-item:hover {
     height: 20rem;
     transition: all 0.5s ease-out;
@@ -46,6 +51,7 @@ h3 {
   .accordion-item:has(input[type='radio']:checked) .icon {
     visibility: visible;
     transition: all 0.3s linear;
+    transform: rotate(45deg);
   }
 }
 
@@ -61,10 +67,7 @@ h3 {
   height: 24rem;
   transition: all 0.5s ease-out;
 }
-.accordion-item:has(input[type='radio']:checked) .icon {
-  transform: rotate(45deg);
-  transition: all 0.2s ease-out;
-}
+
 .meme-img {
   margin: 0 auto;
   width: 100%;

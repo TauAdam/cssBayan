@@ -5,12 +5,14 @@
 html {
   font-size: 0.625rem;
 }
-
-h1 {
-  font-size: 2.4rem;
+body {
+  font-family: monospace;
 }
-h2 {
-  font-size: 1.8rem;
+h1 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.17rem;
 }
 .container {
   max-width: 70vw;
@@ -19,18 +21,29 @@ h2 {
 }
 .accordion {
   color: blue;
-  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .accordion:hover {
+    cursor: pointer;
+    color: #000;
+  }
+  .accordion-item:hover {
+    height: 20rem;
+    transition: all 0.5s ease-out;
+  }
 }
 .accordion-item {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   height: 3rem;
   border-top: 0.1rem solid #ccc;
   transition: all 0.5s ease-out;
 }
-.accordion-item:hover {
-  height: 34rem;
+.accordion-item:has(input[type='radio']:checked) {
+  height: 24rem;
+  transition: all 0.5s ease-out;
 }
 .meme-img {
   width: 50%;
@@ -51,20 +64,21 @@ h2 {
   background: url('./img/meme4.png') center / contain no-repeat;
 }
 
-@media (min-width: 820px) {
+@media (min-width: 800px) {
   html {
     font-size: 0.9rem;
   }
-  .container {
-    max-width: 70vw;
-  }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1900px) {
+  html {
+    font-size: 1rem;
+  }
   .container {
     max-width: 60vw;
   }
-  .accordion:hover {
-    color: #000;
-  }
+}
+
+input[type='radio'] {
+  display: none;
 }
